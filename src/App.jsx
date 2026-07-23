@@ -4,7 +4,9 @@ const Hello = () => <h1>Hellow!</h1>;
 
 const App = () => {
   return (
-   <Todo/>
+   
+      <Todo />
+    
   );
 };
 
