@@ -1,4 +1,4 @@
-import { memo, useContext } from 'react';
+import { useContext } from 'react';
 import TodoItem from './TodoItem';
 import { TasksContext } from '../context/TaskContext';
 
