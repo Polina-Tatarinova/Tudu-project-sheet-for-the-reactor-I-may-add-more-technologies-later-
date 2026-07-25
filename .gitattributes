@@ -1,0 +1,15 @@
+# Игнорируем папки с зависимостями и сборкой
+node_modules/* linguist-vendored
+dist/* linguist-vendored
+build/* linguist-vendored
+
+# Игнорируем конфиги
+*.config.js linguist-vendored
+*.config.ts linguist-vendored
+vite.config.js linguist-vendored
+.eslintrc.js linguist-vendored
+.prettierrc linguist-vendored
+.prettierrc.json linguist-vendored
+
+# Явно указываем, что .jsx — это JavaScript (опционально)
+*.jsx linguist-language=JavaScript
