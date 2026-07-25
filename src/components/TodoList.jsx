@@ -1,36 +1,40 @@
-import TodoItem from "./TodoItem";
+import TodoItem from './TodoItem';
 
 const TodoList = (props) => {
   const {
     tasks = [],
+    filteredTasks,
     onDeleteTaskButtonClick,
     onTaskCompleteChange,
-  } = props
+  } = props;
 
+  const hasTasks = tasks.length > 0;
+  const isEmptyFilteredTasks = filteredTasks?.length === 0;
 
-    const hasTasks = true
-    if(!hasTasks){
-        return(
-            <div className="todo__empty-message"></div>
-        )
-    }
-    return (
-      <ul className="todo__list">
-  {tasks.map((task)=>(
-    <TodoItem
-    className='todo__item'
-    // id={task.id}
-    // title={task.title}
-    // isDone={task.isDone}
-    key={task.id}
-    onDeleteTaskButtonClick={onDeleteTaskButtonClick}
-    onTaskCompleteChange={onTaskCompleteChange}
-    {...task}
-    />
-  ))}
-          
-      </ul>
-    );
-}
+  if (!hasTasks) {
+    return <div className="todo__empty-message">Задач пока нет</div>;
+  }
+
+  if (hasTasks && isEmptyFilteredTasks) {
+    return <div className="todo__empty-message">Задача не найдена</div>;
+  }
+
+  return (
+    <ul className="todo__list">
+      {(filteredTasks ?? tasks).map((task) => (
+        <TodoItem
+          className="todo__item"
+          // id={task.id}
+          // title={task.title}
+          // isDone={task.isDone}
+          key={task.id}
+          onDeleteTaskButtonClick={onDeleteTaskButtonClick}
+          onTaskCompleteChange={onTaskCompleteChange}
+          {...task}
+        />
+      ))}
+    </ul>
+  );
+};
 
 export default TodoList;
