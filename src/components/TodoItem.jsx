@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 const TodoItem = (props) => {
   //Пропсы передаются только  сверху вниз, от родителя к ребёнку
   //компонент не должен изменять переданный пропс, он их только читает
@@ -49,4 +51,4 @@ const TodoItem = (props) => {
     </li>
   );
 };
-export default TodoItem;
+export default memo(TodoItem);
