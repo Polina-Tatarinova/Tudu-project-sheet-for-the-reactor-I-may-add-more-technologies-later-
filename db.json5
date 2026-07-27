@@ -1,0 +1,9 @@
+{
+  tasks: [
+    { title: 'd', isDone: true, id: '3cA10fRlKIs' },
+    { title: 'w', isDone: false, id: 'wKMAvyn9AzA' },
+    { title: 'w', isDone: false, id: 'IQEdZH1_5D4' },
+    { title: 'w', isDone: false, id: 'B77tfdv6XIY' },
+  ],
+  $schema: './node_modules/json-server/schema.json',
+}
